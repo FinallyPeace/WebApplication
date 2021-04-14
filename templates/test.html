@@ -1,0 +1,8 @@
+
+{% if n < 3 %}
+<h1>Text: {{n}} < 3</h1>
+{% else %}
+    {% for i in range(n) %}
+    <h1>重複 {{i+1}}次</h1>
+    {% endfor %}
+{% endif %}
