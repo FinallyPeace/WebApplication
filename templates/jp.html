@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./static/template.css">
+    <link rel="stylesheet" href="../static/template.css ">
     <title>WoW Travel - 國外旅遊</title>
     <link rel="Shortcut Icon" type="image/x-icon" href="./icon/wow_travel.ico">
     <style>
@@ -23,7 +23,7 @@
         
         header {
             position: relative;
-            background: rgba(0, 0, 0, .1) url("image/bg_jp.jpg") center;
+            background: rgba(0, 0, 0, .1) url("../static/jp/image/bg_jp.jpg") center;
             background-blend-mode: multiply;
             background-size: cover;
             height: 30vh;
@@ -309,7 +309,7 @@
 
     <section id="attraction" class="container my-4 d-flex flex-column">
         <div class="card text-white" style="border: 0px;">
-            <div class="card-img" style="width: 100%; height: 300px; background: rgba(0, 0, 0, .5) url('image/必訪景點.jpg') no-repeat center; background-size: cover; background-blend-mode: multiply;">
+            <div class="card-img" style="width: 100%; height: 300px; background: rgba(0, 0, 0, .5) url('../static/jp/image/必訪景點.jpg') no-repeat center; background-size: cover; background-blend-mode: multiply;">
             </div>
             <div class="card-img-overlay d-flex flex-column justify-content-center font-weight-bolder">
                 <h3 class="card-title">必訪景點</h3>
@@ -319,7 +319,7 @@
         <div class="row d-flex flex-row flex-wrap">
             <div class="mt-4 col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <img class="card-img-top" src="image/必訪景點_東京_淺草雷門.jpg" style="width: 100%;">
+                    <img class="card-img-top" src="{{url_for('static', filename='jp/image/必訪景點_東京_淺草雷門.jpg')}} " style="width: 100%;">
                     <div class="card-body">
                         <h5 class="card-title">【東京】 淺草雷門</h5>
                         <p class="card-text">
@@ -334,7 +334,7 @@
             </div>
             <div class="mt-4 col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <img class="card-img-top" src="image/必訪景點_東京_晴空塔.jpg" style="width: 100%;">
+                    <img class="card-img-top" src="../static/jp/image/必訪景點_東京_晴空塔.jpg" style="width: 100%;">
                     <div class="card-body">
                         <h5 class="card-title">【東京】 晴空塔</h5>
                         <p class="card-text">
@@ -349,7 +349,7 @@
             </div>
             <div class="mt-4 col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <img class="card-img-top" src="image/必訪景點_東京_河口湖.jpg" style="width: 100%;">
+                    <img class="card-img-top" src="../static/jp/image/必訪景點_東京_河口湖.jpg" style="width: 100%;">
                     <div class="card-body">
                         <h5 class="card-title">【東京】 河口湖</h5>
                         <p class="card-text">河口湖是位於山梨縣富士河口湖町的湖泊，為富士五湖之一，天氣晴朗時湖中富士山倒影相映為一絕景。</p>
@@ -362,7 +362,7 @@
             </div>
             <div class="mt-4 col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <img class="card-img-top" src="image/必訪景點_大阪_道頓堀.jpg" style="width: 100%;">
+                    <img class="card-img-top" src="../static/jp/image/必訪景點_大阪_道頓堀.jpg" style="width: 100%;">
                     <div class="card-body">
                         <h5 class="card-title">【大阪】 道頓堀</h5>
                         <p class="card-text">
