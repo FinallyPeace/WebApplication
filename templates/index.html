@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../static/template.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='template.css')}}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
@@ -307,7 +307,7 @@
     </a>
 
     <!-- nav -->
-
+    {% block alert %}
     <div class="full-screen alert alert-danger alert-dismissible fade show" role="alert">
         <div class="text">
             <div class="close"> <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -320,7 +320,7 @@
                         href="https://www.cdc.gov.tw/">衛生福利部疾病管制署</a>網頁</span></p>
         </div>
     </div>
-
+    {{% endblock %}}
     <nav class="navbar navbar-expand-lg bg-color navbar-dark fixed-top">
         <a class="navbar-brand d-flex justify-content-center" href="./index.html">W<div class="logo">
             <div class='nav_circle'></div>
@@ -393,7 +393,7 @@
         </div>
     </nav>
 
-
+    {% block content %}
     <!-- carousel -->
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -404,14 +404,14 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../static/image/world_eu.jpg" class="d-block w-100" alt="...">
+                <img src="{{ url_for('static', filename='image/world_eu.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>WoWTravel給你最棒的旅遊體驗</h1>
                     <h4>WoWTravel gives you the best travel experience.</h4>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../static/image/bg_beach.jpg" class="d-block w-100" alt="...">
+                <img src="{{ url_for('static', filename='image/bg_beach.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block ">
                     <h1 class='carousel_text mt-5'>全世界最棒的旅遊體驗</br>
                         帶你深入探索有趣又獨特的旅遊體驗行程</h1>
@@ -419,7 +419,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../static/image/bd_london.jpg" class="d-block w-100" alt="...">
+                <img src="{{ url_for('static', filename='image/bd_london.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>全世界最棒的旅遊體驗</br>
                         帶你深入探索有趣又獨特的旅遊體驗行程</h2>
@@ -860,7 +860,7 @@
             </div>
         </div>
     </section>
-
+    {% endblock %}
     <!-- footer -->
 
     <footer>

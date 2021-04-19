@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="/process" method="POST">
+        <fieldset>
+            <legend>Legend</legend>
+            <p><label>Name : </label></p>
+            <p><input type="text" name="name"></p>
+            <label>Phone :</label>
+            <p><input type="tel" name="phone" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" placeholder="0900-000-000"></p>
+            <label>E-mail :</label>
+            <p><input type="email" name="mail"></p>
+
+            <label>Birthday : </label>
+            <p><input name='birthday' type='date'></p>
+
+            <label>Gender :</label>
+            <p><select name="gender_select">
+                <option value="male">男</option>
+                <option value="female" >女</option>
+                <option value="other" selected>其他</option>
+            </select></p>
+
+            <label>Country :</label>
+            <p><input list="list" name="country"></p>
+            <datalist id="list">
+                <option value="TW">
+                <option value="JP">
+                <option value="US">
+                <option value="EU">
+                <option value="AR">
+            </datalist>
+
+            <label>加選方案：</label>
+            <p><input name="opt" type="checkbox" value="A">A</p>
+            <p><input name="opt" type="checkbox" value="B">B</p>
+
+            <label>付費方式：</label>
+            <p><input name="pay" type="radio" value="creditCard">信用卡</p>
+            <p><input name="pay" type="radio" value="atm">ATM</p>
+
+            <label>Suggestion :</label><br>
+            <p><textarea name="suggest" cols="30" rows="10" placeholder="意見..."></textarea></p>
+            <input type="submit"><br>
+        </fieldset>
+    </form>
+</body>
+
+</html>
