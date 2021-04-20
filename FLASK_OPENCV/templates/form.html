@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="{{ url_for('process') }}" method="post" enctype="multipart/form-data">
+        圖片：<input type="file" name="image1" accept="image/*" required><br />
+        線條顏色：<input type="color" name="line_color" value=""><br />
+        線條粗細：<input type="range" name="line_thickness" min="1" max="10" value="2"><br />
+        <input type="submit" value="上傳">
+    </form>
+</body>
+
+</html>

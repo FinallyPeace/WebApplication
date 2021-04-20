@@ -30,14 +30,14 @@ app = Flask(__name__)
 #     return f'Name:{name}, Age:{age}'
 
 # 取得表單資料的方法 form-data
-@app.route('/form')
-def form():
-    return render_template('form.html')
-# request.form.get == request.values.get
-@app.route("/process", methods=['POST'])
-def post_form():
-    result = request.form.to_dict()
-    return jsonify(result)
+# @app.route('/form')
+# def form():
+#     return render_template('form.html')
+# # request.form.get == request.values.get
+# @app.route("/process", methods=['POST'])
+# def post_form():
+#     result = request.form.to_dict()
+#     return json.dumps(result, ensure_ascii=False)
 
 # 直接將 dict 轉為 JSON
 # @app.route('/json', methods=['GET', 'POST'])
@@ -122,6 +122,17 @@ def update_task(task_id):
         'data':task
     }), 200
 
-@app.route('/task/<int:task_id>', methods=['DELETE'])
+@app.route('/tasks/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
-    pass
+    task = tasks.get(task_id)
+    if not task:
+        return json.dumps({
+            'success':False,
+            'error':'Task not found'
+        }), 404
+    del tasks[task_id]
+    return json.dumps({
+        'success':True,
+        'data':task
+    }), 200
+
