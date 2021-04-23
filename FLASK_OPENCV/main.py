@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('form.html')
-'''
+
 @app.route('/', methods=['POST'])
 def process():
     file1 = request.files['image1']
@@ -19,7 +19,6 @@ def process():
     # 將檔案內容轉成 Numpy Array
     # numpy.fromstring(string, dtype=float, count=-1, sep='')
     npImg1 = np.fromstring(file1_content, np.uint8) # unsigned int 0-255
-    #      cv2.imdecode(影像檔案, 影像旗標)
     bgr1 = cv2.imdecode(npImg1, cv2.IMREAD_COLOR) # 預設，以彩色影像讀取， 值為1
     # return jsonify(bgr1.shape)
     
@@ -47,9 +46,10 @@ def process():
     if not os.path.exists(folderPath):
         os.makedirs(folderPath)
     filename = f'{ datetime.datetime.now().strftime("%Y%m%d_%H%M%S") }.jpg'
+    # cv2.imwrite(檔案路徑, 影像物件) -> 用來儲存影像
     cv2.imwrite(os.path.join(folderPath, filename), bgr1)
 
-    response = {
+    response = { # _external=True 告訴Flask要生成絕對url ,而非相對url
         'url': url_for('static', filename = f'output_image/{filename}', _external=True)
     }
     # return response
@@ -81,3 +81,4 @@ def process():
     
     base64_image = base64.b64encode(cv2.imencode('.jpg', bgr1)[1]).decode()
     return render_template('show_image.html', base64_image=base64_image)
+'''

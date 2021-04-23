@@ -9,17 +9,10 @@ app = Flask(__name__)
 #         return "<h1 style='color:red;'>首頁</h1>"
 #     return "<h1>第二層 <span style='color:blue;'>"+ name + "</span></h1>"
 
-# @app.route("/")
-# def index():
-#     return render_template("index.html")
 
 # @app.route("/test")
 # def nav():
 #     return render_template("test.html")
-
-# @app.route("/jp")
-# def jp():
-#     return render_template("jp.html")
 
 # 取得網址 Query 資料的方法
 # addr: /query?name=xxx&age=25
@@ -36,7 +29,7 @@ app = Flask(__name__)
 # # request.form.get == request.values.get
 # @app.route("/process", methods=['POST'])
 # def post_form():
-#     result = request.form.to_dict()
+#     result = request.values.to_dict()
 #     return json.dumps(result, ensure_ascii=False)
 
 # 直接將 dict 轉為 JSON
