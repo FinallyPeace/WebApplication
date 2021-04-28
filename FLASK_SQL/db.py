@@ -5,9 +5,9 @@ print("Opened database successfully")
 connect.execute(
     """
     CREATE TABLE students (
-        name TEXT,
+        name TEXT NOT NULL,
         city TEXT,
-        pin TEXT,
+        pin TEXT NOT NULL,
         addr TEXT
     )
     """
