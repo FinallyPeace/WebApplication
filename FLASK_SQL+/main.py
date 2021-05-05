@@ -56,3 +56,26 @@ def delete_task(task_id):
         return failure_response("Task not found!")
     DB.delete_task_by_id(task_id)
     return success_response(task)
+
+# SubTask
+@app.route("/tasks/<int:task_id>/subtasks", methods=["POST"])
+def create_subtask(task_id):
+    body = json.loads(request.data)
+    description = body["description"]
+    task = DB.get_task_by_id(task_id)
+    
+    if task is None:
+        return failure_response("Task not found!")
+
+    subtask_id = DB.insert_subtask(description, False, task_id)
+    subtask =  DB.get_subtasks_of_task(subtask_id)
+    
+    if subtask is None:
+        return failure_response("subtask could not be create!")
+
+    return success_response(subtask)
+
+@app.route("/tasks/<int:task_id>/subtasks")
+def get_subtasks_of_task(task_id):
+    res = DB.get_subtasks_of_task(task_id)
+    return success_response(res)
