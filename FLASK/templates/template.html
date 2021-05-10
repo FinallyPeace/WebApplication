@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <title>Flask 模板</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/template.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='goTop.css')}}">
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo">我的第一個Flask網站</h1>
-            <strong><nav>
-              <ul class="menu">
-                <li><a href="{{ url_for('index') }}">首頁</a></li>
-                <li><a href="{{ url_for('jp') }}">日本</a></li>
-              </ul>
-            </nav></strong>
-          </div>
+    <a href="#" id="goTop">
+        <i class="fas fa-angle-double-up"></i>
+    </a>
+    <header class="container">
+        <h1 class="logo">我的第一個Flask網站</h1>
+        <strong><nav>
+            <ul class="menu">
+            	<li><a href="{{ url_for('get_tasks') }}">Get Tasks</a></li>
+            	<li><a href="{{ url_for('create_task') }}">Create Task</a></li>
+			</ul>
+        </nav></strong>
     </header>
-{% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
 </html>

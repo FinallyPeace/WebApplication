@@ -2,17 +2,16 @@ import json
 from flask import Flask, render_template, request , jsonify
 app = Flask(__name__)
 
+@app.route("/")
+def template():
+    return render_template('template.html')
+
 # @app.route("/")
 # @app.route("/<name>")
 # def hello(name = None):
 #     if name == None:
 #         return "<h1 style='color:red;'>首頁</h1>"
 #     return "<h1>第二層 <span style='color:blue;'>"+ name + "</span></h1>"
-
-
-# @app.route("/test")
-# def nav():
-#     return render_template("test.html")
 
 # 取得網址 Query 資料的方法
 # addr: /query?name=xxx&age=25

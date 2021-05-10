@@ -7,7 +7,7 @@ connect.execute(
     CREATE TABLE students (
         name TEXT NOT NULL,
         city TEXT,
-        pin TEXT NOT NULL,
+        pin INTEGER NOT NULL,
         addr TEXT
     )
     """
