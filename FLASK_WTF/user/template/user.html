@@ -1,0 +1,28 @@
+{% from 'bootstrap/form.html' import render_form %}
+<!-- 網頁最上方加入 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {{bootstrap.load_css()}}
+</head>
+
+<body>
+    <!-- 一行建表 -->
+    <!-- <div class="container">{{ render_form(form) }}</div> -->
+    <form method="POST" action="{{ url_for('user') }}">
+        <!-- 這是必填的設定，沒有填會出現異常 -->
+        {{ form.hidden_tag() }}
+
+        <p>{{ form.username.label }} {{ form.username }} {% if form.username.errors %} {% for error in form.username.errors %} {{ error }} {% endfor %} {% endif %}
+        </p>
+        <p>{{ form.email.label }} {{ form.email }}</p>
+        <p>{{ form.submit }}</p>
+    </form>
+</body>
+
+</html>
