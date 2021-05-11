@@ -1,0 +1,9 @@
+{% from 'bootstrap/form.html' import render_form %}
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+<div class="form-group col-md-4">
+   <h1> 帳號註冊 </h1>
+   {{ render_form(form) }}
+</div>
+{% endblock content%}
